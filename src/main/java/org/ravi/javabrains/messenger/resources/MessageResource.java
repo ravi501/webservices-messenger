@@ -43,7 +43,7 @@ public class MessageResource
         }
         return messageService.getAllMessages();
     }
-    
+
     @GET
     @Produces(MediaType.TEXT_XML)
     public List<Message> getXmlMessages( @BeanParam MessageFilterBean filterBean )

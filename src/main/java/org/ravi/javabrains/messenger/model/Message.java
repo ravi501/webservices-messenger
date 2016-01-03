@@ -22,7 +22,7 @@ public class Message
     private String author;
 
     private Map<Long, Comment> comments = new HashMap<>();
-    
+
     private List<Link> links = new ArrayList<>();
 
     public Message()
@@ -98,8 +98,8 @@ public class Message
     {
         this.links = links;
     }
-    
-    public void addLink(String url, String rel)
+
+    public void addLink( String url, String rel )
     {
         Link link = new Link();
         link.setLink( url );

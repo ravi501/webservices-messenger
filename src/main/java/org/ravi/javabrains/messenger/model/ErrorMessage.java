@@ -13,9 +13,9 @@ public class ErrorMessage
 
     public ErrorMessage()
     {
-        
+
     }
-    
+
     public ErrorMessage( String errorMessage, int errorCode, String documentation )
     {
         super();

@@ -15,30 +15,26 @@ import javax.ws.rs.core.UriInfo;
 @Path("/injectdemo")
 @Consumes(MediaType.TEXT_PLAIN)
 @Produces(MediaType.TEXT_PLAIN)
-public class InjectDemoResource {
-	
-	@GET
-	@Path("annotations")
-	public String getParamsUsingAnnotations(@MatrixParam("param") String matrixParam,
-											@HeaderParam("authSessionID") String header,
-											@CookieParam("name") String cookie) {
-		return "Matrix param: " + matrixParam + " Header param: " + header + " Cookie param: " + cookie;
-	}
-	
-	
-	@GET
-	@Path("context")
-	public String getParamsUsingContext(@Context UriInfo uriInfo, @Context HttpHeaders header)
-	{
-		String path = uriInfo.getAbsolutePath().toString();
-		
-		String cookies = header.getCookies().toString();
-		
-		return "Path: " + path + " cookies: " + cookies;
-	}
-	
-	
-	
-	
+public class InjectDemoResource
+{
+
+    @GET
+    @Path("annotations")
+    public String getParamsUsingAnnotations( @MatrixParam("param" ) String matrixParam,
+            @HeaderParam("authSessionID") String header, @CookieParam("name") String cookie)
+    {
+        return "Matrix param: " + matrixParam + " Header param: " + header + " Cookie param: " + cookie;
+    }
+
+    @GET
+    @Path("context")
+    public String getParamsUsingContext( @Context UriInfo uriInfo, @Context HttpHeaders header )
+    {
+        String path = uriInfo.getAbsolutePath().toString();
+
+        String cookies = header.getCookies().toString();
+
+        return "Path: " + path + " cookies: " + cookies;
+    }
 
 }
